@@ -78,6 +78,7 @@ public:
 			cout << horario_incial_m << endl;
 			horario_incial_m += duracao_consulta_m;
 		}*/
+		horario_incial_m = 10;
 		int quantidade_consulta = (17 - 10) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -87,6 +88,7 @@ public:
 	};
 	void show_horarios_livre_qua()
 	{
+		horario_incial_m = 9;
 		int quantidade_consulta = (16 - 9) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -96,6 +98,7 @@ public:
 	}
 	void show_horarios_livre_sexta()
 	{
+		horario_incial_m = 11;
 		int quantidade_consulta = (18 - 11) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -115,8 +118,19 @@ public:
 	*/
 	int duracao_consulta_m = 1;
 	Ginecologista() {};
+
+	void procedimentos()
+	{
+		cout << "os assuntos da consulta sao:\n";
+		cout << "1:exames preventivos\n";
+		cout << "2:planejamento familiar\n";
+		cout << "3:acompanhamento da gravidez\n";
+
+	}
+
 	void show_horarios_livre_seg()
 	{
+		horario_incial_m = 11;
 		int quantidade_consulta = (18 - 11) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -126,6 +140,7 @@ public:
 	};
 	void show_horarios_livre_qua()
 	{
+		horario_incial_m = 10;
 		int quantidade_consulta = (17 - 10) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -135,6 +150,7 @@ public:
 	}
 	void show_horarios_livre_sexta()
 	{
+		horario_incial_m = 7;
 		int quantidade_consulta = (13 - 7) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -154,8 +170,19 @@ public:
 	*/
 	int duracao_consulta_m = 1;
 	Oftalmologista() {};
+
+	void procedimentos()
+	{
+		cout << "os assuntos da consulta sao:\n";
+		cout << "1:diagnostico e tratamento\n";
+		cout << "2:agendar uma operacao\n";
+		cout << "3:ver alteracao de grau\n";
+
+	}
+
 	void show_horarios_livre_seg()
 	{
+		horario_incial_m = 7;
 		int quantidade_consulta = (17 - 7) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -165,6 +192,7 @@ public:
 	};
 	void show_horarios_livre_qua()
 	{
+		horario_incial_m = 9;
 		int quantidade_consulta = (17 - 9) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -174,6 +202,7 @@ public:
 	}
 	void show_horarios_livre_sexta()
 	{
+		horario_incial_m = 13;
 		int quantidade_consulta = (19 - 13) / duracao_consulta_m;
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
@@ -182,20 +211,6 @@ public:
 		}
 	}
 };
-/*
-class Ortopedista : public Medico
-{
-public:
-	string especialidade_m = "Ortopedista";
-	int horario_incial_m = 8;
-	int horario_final_m = 17;
-	int duracao_consulta_m = 1;
-	Ortopedista() {};
-	void show_horarios_livre()
-	{
 
-	};
-};
-*/
 
 

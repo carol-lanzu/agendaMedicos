@@ -5,67 +5,74 @@
 using namespace std;
 #include "Medico.h"
 
+vector <Medico*> vector_medicos;
 
 
-//lvcf
+void funcao_mostrar_horario(int especialidade, int loop)
+{
+	if (especialidade == 1)
+	{
+		cout << "Os horarios sao:\n";
+		vector_medicos.at(loop)->show_horarios_livre_seg();
+	}
+	if (especialidade == 2)
+	{
+		cout << "Os horarios sao:\n";
+		vector_medicos.at(loop)->show_horarios_livre_qua();
+	}
+	if (especialidade == 3)
+	{
+		cout << "Os horarios sao:\n";
+		vector_medicos.at(loop)->show_horarios_livre_sexta();
+	}
+}
+
 
 int main()
 {
 	vector < tuple< string, int, string, string>> vector_consultas_tuple;
-	vector <Medico*> vector_medicos;
 
 	int loop = 0;
 	while (true)
 	{
-		cout << "---------------------------------\n";
+		cout << "-----------------------------------------------------\n";
+		cout << "horario de servico dos profissionais da saude\n";
 		cout << "Entre com a especialidade do medico:\n";
 		cout << "0: Dermatologista\n";
 		cout << "1: Ginecologista\n";
-		cout << "2: Oftalmologista\n";
+		cout << "2: Oftalmologista\n\n";
 		int especialidade = 0;
 		cin >> especialidade;
+
 		if (especialidade == 0)
 		{
 			//Dermatologista a;
 			vector_medicos.push_back(new Dermatologista);
 			vector_medicos.at(loop)->procedimentos();
-			cout << "\nentre com a opcao:"; //oi
+			cout << "\nentre com a opcao:";
 			cin >> especialidade;
-
-
-			if (especialidade == 1)
-			{
-				cout << "Os horarios sao:\n";
-				vector_medicos.at(loop)->show_horarios_livre_seg();
-			}
-			if (especialidade == 2)
-			{
-				cout << "Os horarios sao:\n";
-				vector_medicos.at(loop)->show_horarios_livre_qua();
-			}
-			if (especialidade == 3)
-			{
-				cout << "Os horarios sao:\n";
-				vector_medicos.at(loop)->show_horarios_livre_sexta();
-			}
-
+			funcao_mostrar_horario(especialidade, loop);
 		}
+
 		else if (especialidade == 1)
 		{
 			vector_medicos.push_back(new Ginecologista);
-			/*
-			cout << "Os horarios sao:\n";
-			vector_medicos.at(loop)->show_horarios_livre();
-			*/
+			vector_medicos.at(loop)->procedimentos();
+			cout << "\nentre com a opcao:";
+			cin >> especialidade;
+			funcao_mostrar_horario(especialidade, loop);
 		}
+
 		else if (especialidade == 2)
 		{
 			vector_medicos.push_back(new Oftalmologista);
-			/*
-			cout << "Os horarios sao:\n";
-			vector_medicos.at(loop)->show_horarios_livre();
-			*/
+			vector_medicos.at(loop)->procedimentos();
+			cout << "\nentre com a opcao:";
+			cin >> especialidade;
+			funcao_mostrar_horario(especialidade, loop);
 		}
+		else
+			break;
 
 		loop++;
 	}
