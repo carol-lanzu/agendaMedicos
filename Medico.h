@@ -2,32 +2,53 @@
 using namespace std;
 #include <string>
 #include <vector>
-#include <tuple>
 #include <iostream>
-
+#include <utility>
 
 class Medico
 {
 protected:
 	string especialidade_m = "";
 	int horario_incial_m = 0;
-	int horario_final_m = 0;
+	//int horario_final_m = 0;
 	int duracao_consulta_m = 0;
 public:
 	Medico() {
 		string especialidade_m = "";
 		int horario_incial_m = 0;
-		int horario_final_m = 0;
+		//int horario_final_m = 0;
 		int duracao_consulta_m = 0;
 	};
-	virtual void show_horarios_livre_seg() {};
-	virtual void show_horarios_livre_qua() {};
-	virtual void show_horarios_livre_sexta() {};
+	virtual void show_horarios_livre_seg(vector < pair < int, int >> vector_consultas_pair) {};
+	virtual void show_horarios_livre_qua(vector < pair < int, int >> vector_consultas_pair) {};
+	virtual void show_horarios_livre_sexta(vector < pair < int, int >> vector_consultas_pair) {};
 	virtual void procedimentos() {};
 };
 
-//bool essa_consulta(std::tuple vector_consultas_tuple(), string medico, int horario)
-//{
+bool essa_consulta(int horario, const vector < pair < int, int >>& vector_consultas_pair)
+{
+	for (int i = 0; i < vector_consultas_pair.size(); i++)
+	{
+		if (horario == vector_consultas_pair.at(i).first && vector_consultas_pair.at(i).second == 2)
+			return false;
+	}
+}
+bool essa_consulta_4(int horario, vector < pair < int, int >> vector_consultas_pair)
+{
+	for (int i = 0; i < vector_consultas_pair.size(); i++)
+	{
+		if (horario == vector_consultas_pair.at(i).first && vector_consultas_pair.at(i).second == 4)
+			return false;
+	}
+}
+bool essa_consulta_6(int horario, vector < pair < int, int >> vector_consultas_pair)
+{
+	for (int i = 0; i < vector_consultas_pair.size(); i++)
+	{
+		if (horario == vector_consultas_pair.at(i).first && vector_consultas_pair.at(i).second == 6)
+			return false;
+	}
+}
 //	if (std::get<0>(vector_consultas_tuple)== medico && get<2>(vector_consultas_tuple)== horario)
 //}
 /*
@@ -70,41 +91,56 @@ public:
 		cout << "3: mostrar resultado de exames";
 	}
 
-	void show_horarios_livre_seg()
+
+	void show_horarios_livre_seg(vector < pair < int, int >> vector_consultas_pair)
 	{
-		/*int quantidade_consulta = (horario_final_m - horario_incial_m) / duracao_consulta_m;
-		for (int i = 0; i < quantidade_consulta; i++)
-		{
-			cout << horario_incial_m << endl;
-			horario_incial_m += duracao_consulta_m;
-		}*/
 		horario_incial_m = 10;
 		int quantidade_consulta = (17 - 10) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			////////////////////////////////////////////////////////////////////////////////////////////////////
+			if (essa_consulta(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
 	};
-	void show_horarios_livre_qua()
+	void show_horarios_livre_qua(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 9;
-		int quantidade_consulta = (16 - 9) / duracao_consulta_m;
+		int quantidade_consulta = (16 - horario_incial_m) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_4(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
 	}
-	void show_horarios_livre_sexta()
+	void show_horarios_livre_sexta(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 11;
-		int quantidade_consulta = (18 - 11) / duracao_consulta_m;
+		int quantidade_consulta = (18 - horario_incial_m) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_6(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
+
 	}
 };
 
@@ -128,35 +164,56 @@ public:
 
 	}
 
-	void show_horarios_livre_seg()
+	void show_horarios_livre_seg(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 11;
 		int quantidade_consulta = (18 - 11) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
+
 	};
-	void show_horarios_livre_qua()
+	void show_horarios_livre_qua(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 10;
 		int quantidade_consulta = (17 - 10) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_4(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
+
 	}
-	void show_horarios_livre_sexta()
+	void show_horarios_livre_sexta(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 7;
 		int quantidade_consulta = (13 - 7) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_6(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
+
 	}
 };
 
@@ -180,35 +237,52 @@ public:
 
 	}
 
-	void show_horarios_livre_seg()
+	void show_horarios_livre_seg(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 7;
 		int quantidade_consulta = (17 - 7) / duracao_consulta_m;
+
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
 	};
-	void show_horarios_livre_qua()
+	void show_horarios_livre_qua(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 9;
 		int quantidade_consulta = (17 - 9) / duracao_consulta_m;
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_4(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
 	}
-	void show_horarios_livre_sexta()
+	void show_horarios_livre_sexta(vector < pair < int, int >> vector_consultas_pair)
 	{
 		horario_incial_m = 13;
 		int quantidade_consulta = (19 - 13) / duracao_consulta_m;
+
 		for (int i = 0; i < quantidade_consulta; i++)
 		{
-			cout << horario_incial_m << endl;
+			if (essa_consulta_6(horario_incial_m, vector_consultas_pair))
+			{
+				cout << horario_incial_m << endl;
+			}
 			horario_incial_m += duracao_consulta_m;
+
 		}
+
 	}
 };
 

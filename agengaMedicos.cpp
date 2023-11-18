@@ -4,33 +4,37 @@
 #include <iostream>
 using namespace std;
 #include "Medico.h"
-
+#include <vector>
+#include <utility>
 vector <Medico*> vector_medicos;
+vector < pair < int, int >> vector_consultas_pair_0;
+vector < pair < int, int >> vector_consultas_pair_1;
+vector < pair < int, int >> vector_consultas_pair_2;
 
 
-void funcao_mostrar_horario(int especialidade, int loop)
+
+void funcao_mostrar_horario(int especialidade, int loop, const vector < pair < int, int >>& vector_consultas_pair, const vector<Medico*>& vetor_medico_output )
 {
 	if (especialidade == 1)
 	{
 		cout << "Os horarios sao:\n";
-		vector_medicos.at(loop)->show_horarios_livre_seg();
+		vector_medicos.at(loop)->show_horarios_livre_seg(vector_consultas_pair);
 	}
 	if (especialidade == 2)
 	{
 		cout << "Os horarios sao:\n";
-		vector_medicos.at(loop)->show_horarios_livre_qua();
+		vector_medicos.at(loop)->show_horarios_livre_qua(vector_consultas_pair);
 	}
 	if (especialidade == 3)
 	{
 		cout << "Os horarios sao:\n";
-		vector_medicos.at(loop)->show_horarios_livre_sexta();
+		vector_medicos.at(loop)->show_horarios_livre_sexta(vector_consultas_pair);
 	}
 }
 
 
 int main()
 {
-	vector < tuple< string, int, string, string>> vector_consultas_tuple;
 
 	int loop = 0;
 	while (true)
@@ -50,8 +54,27 @@ int main()
 			vector_medicos.push_back(new Dermatologista);
 			vector_medicos.at(loop)->procedimentos();
 			cout << "\nentre com a opcao:";
+
 			cin >> especialidade;
-			funcao_mostrar_horario(especialidade, loop);
+			funcao_mostrar_horario(especialidade, loop, vector_consultas_pair_0, vector_medicos);
+			cout << "entre com o horario desejado:";
+			int horario;
+			cin >> horario;
+			if (especialidade == 1)
+			{
+				pair <int, int> a(horario, 2);
+				vector_consultas_pair_0.push_back(a);
+			}
+			else if (especialidade == 2)
+			{
+				pair <int, int> a(horario, 4);
+				vector_consultas_pair_0.push_back(a);
+			}
+			else if (especialidade == 3)
+			{
+				pair <int, int> a(horario, 6);
+				vector_consultas_pair_0.push_back(a);
+			}
 		}
 
 		else if (especialidade == 1)
@@ -60,7 +83,25 @@ int main()
 			vector_medicos.at(loop)->procedimentos();
 			cout << "\nentre com a opcao:";
 			cin >> especialidade;
-			funcao_mostrar_horario(especialidade, loop);
+			funcao_mostrar_horario(especialidade, loop, vector_consultas_pair_1, vector_medicos);
+			cout << "entre com o horario desejado:";
+			int horario;
+			cin >> horario;
+			if (especialidade == 1)
+			{
+				pair <int, int> a(horario, 2);
+				vector_consultas_pair_1.push_back(a);
+			}
+			else if (especialidade == 2)
+			{
+				pair <int, int> a(horario, 4);
+				vector_consultas_pair_1.push_back(a);
+			}
+			else if (especialidade == 3)
+			{
+				pair <int, int> a(horario, 6);
+				vector_consultas_pair_1.push_back(a);
+			}
 		}
 
 		else if (especialidade == 2)
@@ -69,7 +110,25 @@ int main()
 			vector_medicos.at(loop)->procedimentos();
 			cout << "\nentre com a opcao:";
 			cin >> especialidade;
-			funcao_mostrar_horario(especialidade, loop);
+			funcao_mostrar_horario(especialidade, loop, vector_consultas_pair_2, vector_medicos);
+			cout << "entre com o horario desejado:";
+			int horario;
+			cin >> horario;
+			if (especialidade == 1)
+			{
+				pair <int, int> a(horario, 2);
+				vector_consultas_pair_2.push_back(a);
+			}
+			else if (especialidade == 2)
+			{
+				pair <int, int> a(horario, 4);
+				vector_consultas_pair_2.push_back(a);
+			}
+			else if (especialidade == 3)
+			{
+				pair <int, int> a(horario, 6);
+				vector_consultas_pair_2.push_back(a);
+			}
 		}
 		else
 			break;
