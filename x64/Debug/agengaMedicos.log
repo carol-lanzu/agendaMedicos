@@ -1,5 +1,2 @@
 ﻿  agengaMedicos.cpp
-C:\Users\carol\OneDrive\Documents\IDE VS\agengaMedicos\Medico.h(35): warning C4715: 'essa_consulta': nem todos os caminhos de controle retornam um valor
-C:\Users\carol\OneDrive\Documents\IDE VS\agengaMedicos\Medico.h(51): warning C4715: 'essa_consulta_6': nem todos os caminhos de controle retornam um valor
-C:\Users\carol\OneDrive\Documents\IDE VS\agengaMedicos\Medico.h(43): warning C4715: 'essa_consulta_4': nem todos os caminhos de controle retornam um valor
   agengaMedicos.vcxproj -> C:\Users\carol\OneDrive\Documents\IDE VS\agengaMedicos\x64\Debug\agengaMedicos.exe
