@@ -30,6 +30,7 @@ void funcao_mostrar_horario(int especialidade, int loop, const vector < pair < i
 		cout << "Os horarios sao:\n";
 		vector_medicos.at(loop)->show_horarios_livre_sexta(vector_consultas_pair);
 	}
+	cout << "Digite 0 para retornar ao menu\n";
 }
 
 
@@ -63,23 +64,30 @@ int main()
 			cout << "Entre com o horario desejado:";
 			int horario;
 			cin >> horario;
-			if (especialidade == 1)
+			if (horario == 0)
 			{
-				pair <int, int> a(horario, 2);
-				vector_consultas_pair_0.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				continue;
 			}
-			else if (especialidade == 2)
+			else
 			{
-				pair <int, int> a(horario, 4);
-				vector_consultas_pair_0.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
-			}
-			else if (especialidade == 3)
-			{
-				pair <int, int> a(horario, 6);
-				vector_consultas_pair_0.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				if (especialidade == 1)
+				{
+					pair <int, int> a(horario, 2);
+					vector_consultas_pair_0.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 2)
+				{
+					pair <int, int> a(horario, 4);
+					vector_consultas_pair_0.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 3)
+				{
+					pair <int, int> a(horario, 6);
+					vector_consultas_pair_0.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
 			}
 		}
 
@@ -95,23 +103,30 @@ int main()
 			cout << "Entre com o horario desejado:";
 			int horario;
 			cin >> horario;
-			if (especialidade == 1)
+			if (horario == 0)
 			{
-				pair <int, int> a(horario, 2);
-				vector_consultas_pair_1.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				continue;
 			}
-			else if (especialidade == 2)
+			else
 			{
-				pair <int, int> a(horario, 4);
-				vector_consultas_pair_1.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
-			}
-			else if (especialidade == 3)
-			{
-				pair <int, int> a(horario, 6);
-				vector_consultas_pair_1.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				if (especialidade == 1)
+				{
+					pair <int, int> a(horario, 2);
+					vector_consultas_pair_1.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 2)
+				{
+					pair <int, int> a(horario, 4);
+					vector_consultas_pair_1.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 3)
+				{
+					pair <int, int> a(horario, 6);
+					vector_consultas_pair_1.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
 			}
 		}
 
@@ -127,24 +142,32 @@ int main()
 			cout << "Entre com o horario desejado:";
 			int horario;
 			cin >> horario;
-			if (especialidade == 1)
+			if (horario == 0)
 			{
-				pair <int, int> a(horario, 2);
-				vector_consultas_pair_2.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				continue;
 			}
-			else if (especialidade == 2)
+			else
 			{
-				pair <int, int> a(horario, 4);
-				vector_consultas_pair_2.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
+				if (especialidade == 1)
+				{
+					pair <int, int> a(horario, 2);
+					vector_consultas_pair_2.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 2)
+				{
+					pair <int, int> a(horario, 4);
+					vector_consultas_pair_2.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
+				else if (especialidade == 3)
+				{
+					pair <int, int> a(horario, 6);
+					vector_consultas_pair_2.push_back(a);
+					cout << "Sua consulta foi agendada com sucesso!\n";
+				}
 			}
-			else if (especialidade == 3)
-			{
-				pair <int, int> a(horario, 6);
-				vector_consultas_pair_2.push_back(a);
-				cout << "Sua consulta foi agendada com sucesso!\n";
-			}
+
 		}
 
 
